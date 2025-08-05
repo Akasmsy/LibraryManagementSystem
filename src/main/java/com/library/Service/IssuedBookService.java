@@ -42,7 +42,7 @@ public class IssuedBookService implements IssuedBookServiceInterface{
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		
 		
-		User user = userRepo.findByName(username)
+		User user = userRepo.findByUsername(username)
 				.orElseThrow(()->new RuntimeException("User Not Found"));
 		
 		IssuesRecords issuesRecords = new IssuesRecords();
